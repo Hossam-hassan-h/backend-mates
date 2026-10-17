@@ -1,0 +1,13 @@
+node_modules/
+
+uploads/
+
+# Environment variables
+config.env
+.env
+.env.*
+
+# Database backups
+backups/
+
+``

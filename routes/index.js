@@ -1,0 +1,44 @@
+const categoryRoute = require('./categoryRoute');
+const subCategoryRoute = require('./subCategoryRoute');
+const productRoute = require('./productRoute');
+const variantRoute = require('./variantRoute');
+const sizeRoute = require('./sizeRoute');
+const colorRoute = require('./colorRoute');
+const setRoute = require('./setRoute');
+const customerRoute = require('./customerRoute');
+const userRoute = require('./userRoute');
+const authRoute = require('./authRoute');
+const reviewRoute = require('./reviewRoute');
+const wishlistRoute = require('./wishlistRoute');
+const addressRoute = require('./addressRoute');
+const couponRoute = require('./couponRoute');
+const cartRoute = require('./cartRoute');
+const orderRoute = require('./orderRoute');
+const dashboardRoute = require('./dashboardRoute');
+const storeSettingsRoute = require('./storeSettingsRoute');
+const bannerRoute = require('./bannerRoute');
+
+const mountRoutes = (app) => {
+  app.use('/api/v1/categories', categoryRoute);
+  app.use('/api/v1/subcategories', subCategoryRoute);
+  app.use('/api/v1/products', productRoute);
+  app.use('/api/v1/variants', variantRoute);
+  app.use('/api/v1/sizes', sizeRoute);
+  app.use('/api/v1/colors', colorRoute);
+  app.use('/api/v1/sets', setRoute);
+  app.use('/api/v1/customers', customerRoute);
+  app.use('/api/v1/users', userRoute);
+  app.use('/api/v1/auth', authRoute);
+  app.use('/api/v1/reviews', reviewRoute);
+  app.use('/api/v1/wishlist', wishlistRoute);
+  app.use('/api/v1/addresses', addressRoute);
+  app.use('/api/v1/coupons', couponRoute);
+  app.use('/api/v1/cart', cartRoute);
+  app.use('/api/v1/orders', orderRoute);
+  app.use('/api/v1/admin/dashboard', dashboardRoute);
+  app.use('/api/v1/admin/customers', customerRoute);
+  app.use('/api/v1/settings', storeSettingsRoute);
+  app.use('/api/v1/banners', bannerRoute);
+};
+
+module.exports = mountRoutes;

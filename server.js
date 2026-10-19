@@ -11,7 +11,7 @@ const fs = require('fs');
 
 
 const express = require('express');
-const dotenv = require('dotenv');
+const dotenv = require('dotenv').config();
 const morgan = require('morgan');
 const cors = require('cors');
 const compression = require('compression');
@@ -35,8 +35,8 @@ const app = express();
 const allowedOrigins = [
   'https://frontend-mates.vercel.app',
   'http://localhost:5173',
-  'https://frontend-mates-q097t4hlv-mates15.vercel.app/',
-  'https://frontend-mates-q097t4hlv-mates15.vercel.app/'
+  'https://frontend-mates-q097t4hlv-mates15.vercel.app',
+  'https://frontend-mates-q097t4hlv-mates15.vercel.app'
 ];
 
 app.use(cors({
@@ -52,7 +52,6 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 
-app.options('*', cors());
 
 // compress all responses
 app.use(compression());
@@ -93,7 +92,7 @@ app.use(
 // Mount Routes
 mountRoutes(app);
 
-app.all('*', (req, res, next) => {
+app.all((req, res, next) => {
   next(new ApiError(`Can't find this route: ${req.originalUrl}`, 400));
 });
 

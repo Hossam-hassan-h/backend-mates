@@ -15,7 +15,7 @@ const app = express();
 
 const allowedOrigins = [
   'https://frontend-mates.vercel.app',
-  'https://frontend-mates-q097t4hlv-mates15.vercel.app',
+  'https://mates-store.vercel.app',
   'http://localhost:5173',
 ];
 

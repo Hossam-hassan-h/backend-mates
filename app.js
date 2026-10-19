@@ -1,5 +1,4 @@
 const path = require('path');
-const fs = require('fs');
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
@@ -10,12 +9,7 @@ const ApiError = require('./utils/apiError');
 const globalError = require('./middlewares/errorMiddleware');
 const mountRoutes = require('./routes');
 
-['products', 'banners', 'categories'].forEach((dir) => {
-  const dirPath = path.join(__dirname, 'uploads', dir);
-  if (!fs.existsSync(dirPath)) {
-    fs.mkdirSync(dirPath, { recursive: true });
-  }
-});
+
 
 const app = express();
 

@@ -1,8 +1,8 @@
   {
-    "name": "el-qasem-e-commece-back",
+    "name": "mates-backend",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "server.js",
     "scripts": {
       "dev": "nodemon server.js",
       "start": "NODE_ENV=production node server.js"

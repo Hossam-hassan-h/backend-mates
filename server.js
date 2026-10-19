@@ -35,6 +35,8 @@ const app = express();
 const allowedOrigins = [
   'https://frontend-mates.vercel.app',
   'http://localhost:5173',
+  'https://frontend-mates-q097t4hlv-mates15.vercel.app/',
+  'https://frontend-mates-q097t4hlv-mates15.vercel.app/'
 ];
 
 app.use(cors({

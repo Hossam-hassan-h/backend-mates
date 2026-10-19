@@ -32,11 +32,10 @@ const dbConnection = () => {
   const dbUri = process.env.MONGO_URI || process.env.DB_URI;
 
   if (!dbUri) {
-    console.error("Database Error: Neither MONGO_URI nor DB_URI is defined in environment.");
-    process.exit(1);
+    throw new Error("Neither MONGO_URI nor DB_URI is defined in environment.");
   }
 
-  mongoose
+  return mongoose
     .connect(dbUri)
     .then(async () => {
       console.log(`Database Connected`);
@@ -44,9 +43,8 @@ const dbConnection = () => {
     })
     .catch((err) => {
       console.error(`Database Error: ${err}`);
-      process.exit(1);
+      throw err;
     });
 };
 
 module.exports = dbConnection;
-
